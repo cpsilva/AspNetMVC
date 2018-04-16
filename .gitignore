@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/AspNetMVC/.vs
+/AspNetMVC/AspNetMVC/obj/Debug
+/AspNetMVC/AspNetMVC/bin
+*.user
+/AspNetMVC/packages
