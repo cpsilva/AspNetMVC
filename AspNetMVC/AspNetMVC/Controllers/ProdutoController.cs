@@ -16,5 +16,21 @@ namespace AspNetMVC.Controllers
 
             return View();
         }
+
+        public ActionResult Form()
+        {
+            IList<CategoriaDoProduto> categorias = new CategoriasDAO().Lista();
+
+            ViewBag.Categorias = categorias;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Adiciona(Produto produto)
+        {
+            new ProdutosDAO().Adiciona(produto);
+
+            return RedirectToAction("Index", "Produto");
+        }
     }
 }
