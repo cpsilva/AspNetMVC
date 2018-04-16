@@ -7,7 +7,6 @@ namespace AspNetMVC.Controllers
 {
     public class CategoriaController : Controller
     {
-        // GET: Categoria
         public ActionResult Index()
         {
             IList<CategoriaDoProduto> categorias = new CategoriasDAO().Lista();

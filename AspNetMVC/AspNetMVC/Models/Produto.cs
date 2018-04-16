@@ -1,9 +1,12 @@
-﻿namespace AspNetMVC.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace AspNetMVC.Models
 {
     public class Produto
     {
         public int Id { get; set; }
 
+        [Required, StringLength(20)]
         public string Nome { get; set; }
 
         public float Preco { get; set; }

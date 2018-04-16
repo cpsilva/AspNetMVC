@@ -7,7 +7,6 @@ namespace AspNetMVC.Controllers
 {
     public class ProdutoController : Controller
     {
-        // GET: Produto
         public ActionResult Index()
         {
             IList<Produto> produtos = new ProdutosDAO().Lista();
@@ -28,9 +27,19 @@ namespace AspNetMVC.Controllers
         [HttpPost]
         public ActionResult Adiciona(Produto produto)
         {
-            new ProdutosDAO().Adiciona(produto);
+            if (ModelState.IsValid)
+            {
+                new ProdutosDAO().Adiciona(produto);
 
-            return RedirectToAction("Index", "Produto");
+                return RedirectToAction("Index", "Produto");
+            }
+            else
+            {
+                IList<CategoriaDoProduto> categorias = new CategoriasDAO().Lista();
+
+                ViewBag.Categorias = categorias;
+                return View("Form");
+            }
         }
     }
 }
