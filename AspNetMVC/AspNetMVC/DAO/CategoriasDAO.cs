@@ -1,9 +1,8 @@
-﻿using AspNetMVC.DAO;
-using AspNetMVC.Models;
+﻿using AspNetMVC.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CaelumEstoque.DAO
+namespace AspNetMVC.DAO
 {
     public class CategoriasDAO
     {

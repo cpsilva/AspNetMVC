@@ -95,9 +95,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\CaelumEstoque.DAO.EstoqueContext.mdf" />
-    <Content Include="App_Data\CaelumEstoque.DAO.EstoqueContext_log.ldf">
-      <DependentUpon>CaelumEstoque.DAO.EstoqueContext.mdf</DependentUpon>
+    <Content Include="App_Data\AspNetMVC.DAO.EstoqueContext.mdf" />
+    <Content Include="App_Data\AspNetMVC.DAO.EstoqueContext_log.ldf">
+      <DependentUpon>AspNetMVC.DAO.EstoqueContext.mdf</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
     <Content Include="Web.config">
@@ -106,7 +106,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="DAO\CategoriasDAO.cs" />
     <Compile Include="DAO\EstoqueContext.cs" />
     <Compile Include="DAO\ProdutosDAO.cs" />
@@ -123,6 +125,8 @@
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Produto\Index.cshtml" />
+    <Content Include="Views\Categoria\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
