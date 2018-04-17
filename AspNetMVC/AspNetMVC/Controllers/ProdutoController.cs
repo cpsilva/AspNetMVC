@@ -21,12 +21,20 @@ namespace AspNetMVC.Controllers
             IList<CategoriaDoProduto> categorias = new CategoriasDAO().Lista();
 
             ViewBag.Categorias = categorias;
+            ViewBag.Produto = new Produto();
             return View();
         }
 
         [HttpPost]
         public ActionResult Adiciona(Produto produto)
         {
+            int idInformatica = 1;
+
+            if (produto.CategoriaId.Equals(idInformatica) && produto.Preco < 100)
+            {
+                ModelState.AddModelError("produto.Invalido", "Produto de informatica por menos de R$100");
+            }
+
             if (ModelState.IsValid)
             {
                 new ProdutosDAO().Adiciona(produto);
@@ -37,6 +45,7 @@ namespace AspNetMVC.Controllers
             {
                 IList<CategoriaDoProduto> categorias = new CategoriasDAO().Lista();
 
+                ViewBag.Produto = produto;
                 ViewBag.Categorias = categorias;
                 return View("Form");
             }
