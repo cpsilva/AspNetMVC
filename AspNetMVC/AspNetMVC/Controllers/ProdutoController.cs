@@ -50,5 +50,12 @@ namespace AspNetMVC.Controllers
                 return View("Form");
             }
         }
+
+        public ActionResult Visualizar(int id)
+        {
+            Produto produto = new ProdutosDAO().BuscaPorId(id);
+            ViewBag.Produto = produto;
+            return View();
+        }
     }
 }

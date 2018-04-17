@@ -24,7 +24,9 @@
                 {
                     <tr>
                         <td>@produto.Id</td>
-                        <td>@produto.Nome</td>
+                        <td>
+                            <a href="/Produto/Visualizar/@produto.Id">@produto.Nome</a>
+                        </td>
                         <td>@produto.Quantidade</td>
                     </tr>
                 }
