@@ -7,6 +7,7 @@ namespace AspNetMVC.Controllers
 {
     public class ProdutoController : Controller
     {
+        [Route("produtos")]
         public ActionResult Index()
         {
             IList<Produto> produtos = new ProdutosDAO().Lista();
@@ -49,6 +50,7 @@ namespace AspNetMVC.Controllers
             }
         }
 
+        [Route("produtos/{id}")]
         public ActionResult Visualizar(int id)
         {
             Produto produto = new ProdutosDAO().BuscaPorId(id);
