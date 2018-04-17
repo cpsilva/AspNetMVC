@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IList<AspNetMVC.Models.Produto>
+
+@{
     Layout = null;
 }
 
@@ -20,12 +22,12 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var produto in ViewBag.Produtos)
+                @foreach (var produto in Model)
                 {
                     <tr>
                         <td>@produto.Id</td>
                         <td>
-                            <a href="/Produto/Visualizar/@produto.Id">@produto.Nome</a>
+                            @Html.ActionLink(produto.Nome, "Visualizar", new { id = produto.Id })
                         </td>
                         <td>@produto.Quantidade</td>
                     </tr>
