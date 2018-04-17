@@ -1,24 +1,24 @@
-﻿@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Visualizar</title>
-</head>
-<body>
-    <div>
-        Id: @ViewBag.Produto.Id<br />
-        Nome: @ViewBag.Produto.Nome <br />
-        Quantidade: @ViewBag.Produto.Quantidade<br />
-        Preço: @ViewBag.Produto.Preco<br />
-        Descrição: @ViewBag.Produto.Descricao<br />
-        Categoria: @ViewBag.Produto.Categoria.Nome<br />
-
-        @Html.RouteLink("Voltar para lista", "ListaProduto")
-    </div>
-</body>
-</html>
+﻿
+<section class="content">
+    <section class="invoice">
+        <div class="row">
+            <div class="col-xs-12">
+                <p class="lead">@ViewBag.Produto.Nome</p>
+            </div>
+            <dl class="col-sm-9 col-xs-12">
+                <dt>Id:</dt>
+                <dd>@ViewBag.Produto.Id</dd>
+                <dt>Nome:</dt>
+                <dd>@ViewBag.Produto.Nome</dd>
+                <dt>Quantidade:</dt>
+                <dd>@ViewBag.Produto.Quantidade</dd>
+                <dt>Preço:</dt>
+                <dd>@ViewBag.Produto.Preco</dd>
+                <dt>Descrição:</dt>
+                <dd>@ViewBag.Produto.Descricao</dd>
+                <dt>Categoria:</dt>
+                <dd>@ViewBag.Produto.Categoria.Nome</dd>
+            </dl>
+        </div>
+    </section>
+</section>

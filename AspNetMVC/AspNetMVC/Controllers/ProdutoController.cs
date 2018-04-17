@@ -18,9 +18,9 @@ namespace AspNetMVC.Controllers
         public ActionResult Form()
         {
             IList<CategoriaDoProduto> categorias = new CategoriasDAO().Lista();
-
-            ViewBag.Categorias = categorias;
             ViewBag.Produto = new Produto();
+            ViewBag.Categorias = categorias;
+            
             return View();
         }
 

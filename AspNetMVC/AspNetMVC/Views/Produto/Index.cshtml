@@ -1,39 +1,40 @@
 ﻿@model IList<AspNetMVC.Models.Produto>
 
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Nome</th>
-                    <th>Quantidade</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var produto in Model)
-                {
-                    <tr>
-                        <td>@produto.Id</td>
-                        <td>
-                            @Html.RouteLink(produto.Nome, "VisualizarProduto", new { id = produto.Id })
-                        </td>
-                        <td>@produto.Quantidade</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Lista de Produtos</h3>
+                </div>
+                <div class="box-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nome</th>
+                                <th>Quantidade</th>
+                                <th align="center">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var produto in Model)
+                            {
+                                <tr>
+                                    <td>@produto.Id</td>
+                                    <td>
+                                        @Html.RouteLink(produto.Nome, "VisualizaProduto", new { id = produto.Id })
+                                    </td>
+                                    <td>@produto.Quantidade</td>
+                                    <td align="center">
+                                        <button type="button" class="btn btn-primary" data-toggle="tooltip" title="Visualizar"><i class="fa fa-file"></i></button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
-</body>
-</html>
+</section>
