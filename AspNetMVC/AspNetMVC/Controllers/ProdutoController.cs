@@ -20,7 +20,7 @@ namespace AspNetMVC.Controllers
             IList<CategoriaDoProduto> categorias = new CategoriasDAO().Lista();
             ViewBag.Produto = new Produto();
             ViewBag.Categorias = categorias;
-            
+
             return View();
         }
 
@@ -56,6 +56,15 @@ namespace AspNetMVC.Controllers
             Produto produto = new ProdutosDAO().BuscaPorId(id);
             ViewBag.Produto = produto;
             return View();
+        }
+
+        public ActionResult DecrementaQtd(int id)
+        {
+            var dao = new ProdutosDAO();
+            Produto produto = dao.BuscaPorId(id);
+            produto.Quantidade--;
+            dao.Atualiza(produto);
+            return Json(produto);
         }
     }
 }
