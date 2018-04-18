@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using AspNetMVC.DAO;
+using AspNetMVC.Filters;
 using AspNetMVC.Models;
 
 namespace AspNetMVC.Controllers
@@ -25,6 +26,7 @@ namespace AspNetMVC.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Adiciona(Produto produto)
         {
             int idInformatica = 1;

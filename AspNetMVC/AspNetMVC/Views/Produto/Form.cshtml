@@ -7,6 +7,7 @@
             </div>
 
             <form action="/Produto/Adiciona" method="post">
+                @Html.AntiForgeryToken()
                 <div class="box-body">
                     <div class="form-group">
                         <label for="nome">Nome:</label>

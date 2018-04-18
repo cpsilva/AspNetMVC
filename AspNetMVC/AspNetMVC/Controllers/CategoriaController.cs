@@ -22,6 +22,7 @@ namespace AspNetMVC.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Adiciona(CategoriaDoProduto categoria)
         {
             new CategoriasDAO().Adiciona(categoria);

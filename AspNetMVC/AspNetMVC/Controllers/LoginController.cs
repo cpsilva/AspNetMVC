@@ -1,11 +1,12 @@
 ﻿using AspNetMVC.DAO;
-using AspNetMVC.Models;
 using System.Web.Mvc;
 
 namespace AspNetMVC.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View();
